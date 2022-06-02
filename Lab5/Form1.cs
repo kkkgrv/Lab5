@@ -50,7 +50,7 @@ namespace Lab5
             var request = new RestRequest(Method.POST);
             request.AddHeader("apikey", token);
             request.AddFile("url", path);
-            if (comboBox1.Text == null)
+            if (comboBox1.Text == "Выбрать язык")
             {
                 textBox1.Text = "Не выбран язык";
             }
@@ -67,6 +67,7 @@ namespace Lab5
             JToken item = j.SelectToken("$.ParsedResults")[0].SelectToken(".ParsedText");
 
             textBox1.Text = item.ToString();
+
         }
     }
 
